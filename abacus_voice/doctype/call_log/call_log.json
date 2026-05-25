@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "autoname": "format:CALL-{YYYY}-{#####}",
+ "creation": "2026-05-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_id",
+  "scenario",
+  "conversation_uuid",
+  "status",
+  "attempt_number",
+  "column_break_1",
+  "started_at",
+  "ended_at",
+  "recording_url",
+  "section_results",
+  "extracted_data",
+  "section_transcript",
+  "transcript"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Link",
+   "label": "Klient",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scenario",
+   "fieldtype": "Link",
+   "label": "Scenariusz",
+   "options": "Call Scenario",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "conversation_uuid",
+   "fieldtype": "Data",
+   "label": "Vonage Conversation UUID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "initiated\nactive\ncompleted\nunanswered\nfailed\nopt-out\ncancelled",
+   "reqd": 1,
+   "in_list_view": 1,
+   "default": "initiated"
+  },
+  {
+   "default": "1",
+   "fieldname": "attempt_number",
+   "fieldtype": "Int",
+   "label": "Numer próby"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "started_at",
+   "fieldtype": "Datetime",
+   "label": "Rozpoczęto",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "ended_at",
+   "fieldtype": "Datetime",
+   "label": "Zakończono"
+  },
+  {
+   "fieldname": "recording_url",
+   "fieldtype": "Data",
+   "label": "URL nagrania"
+  },
+  {
+   "fieldname": "section_results",
+   "fieldtype": "Section Break",
+   "label": "Wyniki rozmowy"
+  },
+  {
+   "fieldname": "extracted_data",
+   "fieldtype": "Code",
+   "label": "Wyciągnięte dane (JSON)",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_transcript",
+   "fieldtype": "Section Break",
+   "label": "Transkrypcja"
+  },
+  {
+   "fieldname": "transcript",
+   "fieldtype": "Long Text",
+   "label": "Transkrypcja rozmowy",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Abacus Voice",
+ "name": "Call Log",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "started_at",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "autoname": "field:title",
+ "creation": "2026-05-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "is_active",
+  "section_config",
+  "rodo_message",
+  "max_retries",
+  "retry_interval_hours",
+  "section_scenario",
+  "scenario_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Nazwa scenariusza",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Aktywny"
+  },
+  {
+   "fieldname": "section_config",
+   "fieldtype": "Section Break",
+   "label": "Konfiguracja połączeń"
+  },
+  {
+   "default": "Dzień dobry. Tu automatyczny system biura rachunkowego Abacus. Rozmowa jest rejestrowana. Czy mogę zadać krótkie pytanie?",
+   "fieldname": "rodo_message",
+   "fieldtype": "Small Text",
+   "label": "Komunikat otwierający (RODO)",
+   "reqd": 1
+  },
+  {
+   "default": "3",
+   "fieldname": "max_retries",
+   "fieldtype": "Int",
+   "label": "Maksymalna liczba prób",
+   "reqd": 1
+  },
+  {
+   "default": "2",
+   "fieldname": "retry_interval_hours",
+   "fieldtype": "Int",
+   "label": "Przerwa między próbami (godz.)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_scenario",
+   "fieldtype": "Section Break",
+   "label": "Scenariusz dialogu"
+  },
+  {
+   "fieldname": "scenario_json",
+   "fieldtype": "Code",
+   "label": "Scenariusz (JSON)",
+   "options": "JSON",
+   "reqd": 1,
+   "description": "Definicja drzewa dialogu w formacie JSON. Zobacz dokumentację dla struktury."
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Abacus Voice",
+ "name": "Call Scenario",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

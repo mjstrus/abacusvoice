@@ -1,0 +1,12 @@
+[
+  {
+    "doctype": "Custom Field",
+    "dt": "Customer",
+    "fieldname": "voice_opt_out",
+    "fieldtype": "Check",
+    "label": "Wypisany z kontaktu automatycznego",
+    "default": "0",
+    "insert_after": "mobile_no",
+    "description": "Jeśli zaznaczone, system nie będzie automatycznie dzwonił do tego klienta."
+  }
+]

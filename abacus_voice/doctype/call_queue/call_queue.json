@@ -1,0 +1,109 @@
+{
+ "actions": [],
+ "autoname": "format:CQUEUE-{YYYY}-{#####}",
+ "creation": "2026-05-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_id",
+  "scenario",
+  "status",
+  "attempt_number",
+  "column_break_1",
+  "scheduled_at",
+  "call_log",
+  "section_context",
+  "context_data"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Link",
+   "label": "Klient",
+   "options": "Customer",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "scenario",
+   "fieldtype": "Link",
+   "label": "Scenariusz",
+   "options": "Call Scenario",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "pending\nin_progress\ncompleted\ncancelled\nexhausted",
+   "reqd": 1,
+   "default": "pending",
+   "in_list_view": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "attempt_number",
+   "fieldtype": "Int",
+   "label": "Numer próby",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scheduled_at",
+   "fieldtype": "Datetime",
+   "label": "Zaplanowano na",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "call_log",
+   "fieldtype": "Link",
+   "label": "Log rozmowy",
+   "options": "Call Log"
+  },
+  {
+   "fieldname": "section_context",
+   "fieldtype": "Section Break",
+   "label": "Dane kontekstowe"
+  },
+  {
+   "fieldname": "context_data",
+   "fieldtype": "Code",
+   "label": "Context Data (JSON)",
+   "options": "JSON",
+   "description": "Dane przekazywane do scenariusza jako zmienne Jinja2."
+  }
+ ],
+ "links": [],
+ "modified": "2026-05-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Abacus Voice",
+ "name": "Call Queue",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "write": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "scheduled_at",
+ "sort_order": "ASC",
+ "track_changes": 1
+}

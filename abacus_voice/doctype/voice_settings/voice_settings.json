@@ -1,0 +1,110 @@
+{
+ "actions": [],
+ "creation": "2026-05-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_vonage",
+  "vonage_application_id",
+  "vonage_phone_number",
+  "vonage_private_key",
+  "vonage_signature_secret",
+  "section_claude",
+  "claude_api_key",
+  "section_webhook",
+  "webhook_base_url",
+  "section_optout",
+  "optout_task_assignee"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_vonage",
+   "fieldtype": "Section Break",
+   "label": "Vonage API"
+  },
+  {
+   "fieldname": "vonage_application_id",
+   "fieldtype": "Data",
+   "label": "Vonage Application ID",
+   "reqd": 1,
+   "description": "ID aplikacji głosowej z Vonage Dashboard."
+  },
+  {
+   "fieldname": "vonage_phone_number",
+   "fieldtype": "Data",
+   "label": "Numer telefonu Vonage (+48...)",
+   "reqd": 1,
+   "description": "Numer wychodzący w formacie E.164, np. +48221234567."
+  },
+  {
+   "fieldname": "vonage_private_key",
+   "fieldtype": "Code",
+   "label": "Vonage Private Key (PEM)",
+   "options": "Text",
+   "reqd": 1,
+   "description": "Klucz prywatny wygenerowany przy tworzeniu aplikacji Vonage. Wklej całą zawartość pliku .key."
+  },
+  {
+   "fieldname": "vonage_signature_secret",
+   "fieldtype": "Password",
+   "label": "Vonage Signature Secret",
+   "reqd": 1,
+   "description": "Klucz do weryfikacji przychodzących webhooków. Znajdziesz go w Vonage Dashboard → API Settings → Signature secret."
+  },
+  {
+   "fieldname": "section_claude",
+   "fieldtype": "Section Break",
+   "label": "Claude API"
+  },
+  {
+   "fieldname": "claude_api_key",
+   "fieldtype": "Password",
+   "label": "Claude API Key",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_webhook",
+   "fieldtype": "Section Break",
+   "label": "Webhooks"
+  },
+  {
+   "fieldname": "webhook_base_url",
+   "fieldtype": "Data",
+   "label": "Bazowy URL webhooków",
+   "reqd": 1,
+   "description": "Publiczny URL serwera Frappe, np. https://twojadomena.pl/api/method/abacus_voice.webhook"
+  },
+  {
+   "fieldname": "section_optout",
+   "fieldtype": "Section Break",
+   "label": "Opt-out"
+  },
+  {
+   "fieldname": "optout_task_assignee",
+   "fieldtype": "Link",
+   "label": "Osoba do zadań opt-out",
+   "options": "User",
+   "description": "Użytkownik Frappe do którego przypisywane są zadania gdy klient prosi o wypisanie."
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-05-25 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Abacus Voice",
+ "name": "Voice Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 0,
+   "print": 0,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
